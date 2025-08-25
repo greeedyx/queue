@@ -1,6 +1,6 @@
 {
   "name": "@greedyx/queue",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "JS任务队列,可配置并发数、失败重试次数、失败重试延迟执行时间",
   "main": "./dist/index.min.cjs",
   "module": "./dist/esm/index.js",
