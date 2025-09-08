@@ -127,9 +127,9 @@ export default class Queue<T> {
   }
 
   /**
-  * 执行队列中的所有任务
-  * @returns Promise 包含所有任务执行结果的数组
-  */
+   * 执行队列中的所有任务
+   * @returns Promise 包含所有任务执行结果的数组
+   */
   public exec(): Promise<any[]> {
     return new Promise((resolve) => {
       if (this._total === 0) {
