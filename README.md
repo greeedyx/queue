@@ -1,15 +1,19 @@
-# greedyx/queue
+# @greedyx/queue
 
 - JavaScript 任务队列工具类
 
 ## 简介
 
-`greedyx/queue` 是一个轻量级的 JavaScript 任务队列库，旨在简化异步任务的并发控制和错误处理。它非常适合用于需要批量处理相同逻辑任务的场景，支持并发控制、失败重试机制等功能。
+`@greedyx/queue` 是一个轻量级的 JavaScript 任务队列库，旨在简化异步任务的并发控制和错误处理。它非常适合用于需要批量处理相同逻辑任务的场景，支持并发控制、失败重试机制等功能。
 
 ## 安装
 
 ```shell
-npm install greedyx/queue
+npm install @greedyx/queue
+```
+或
+```shell
+pnpm add @greedyx/queue
 ```
 
 ## 功能特性
