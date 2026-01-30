@@ -61,7 +61,7 @@ export default class Queue<T> {
    * 创建队列实例的静态方法
    * @returns 新的Queue实例
    */
-  public static createInstance(concurrency = 3, retry = 1, delay = 1000) {
+  public static createInstance<T>(concurrency = 3, retry = 1, delay = 1000): Queue<T> {
     return new Queue(concurrency, retry, delay);
   }
 
@@ -111,7 +111,7 @@ export default class Queue<T> {
    */
   public every(fn: (it: T, idx: number) => any) {
     const ps = this._data.map((t, i) => () => fn(t, i));
-    return this.addTask(ps).exec();
+    return this.add(ps).exec();
   }
 
   /**
@@ -119,7 +119,7 @@ export default class Queue<T> {
    * @param fn 任务函数或函数数组
    * @returns 当前实例，支持链式调用
    */
-  public addTask(fn: Fn<any> | Fn<any>[]) {
+  public add(fn: Fn<any> | Fn<any>[]) {
     const fns = Array.isArray(fn) ? fn : [fn];
     this._queue.push(...fns);
     this._total = this._queue.length;

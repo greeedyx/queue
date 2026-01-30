@@ -3,7 +3,7 @@ import Queue from '../index';
 describe('Queue Class', () => {
 
   test('执行成功', async () => {
-    Queue.createInstance()
+    Queue.createInstance<number>()
       .data([1, 2, 3, 4, 5, 6, 7, 8])
       .maxConcurrency(4)
       .retryTimes(3)
