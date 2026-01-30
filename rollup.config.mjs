@@ -8,7 +8,7 @@ const cjs = defineConfig({
   input: 'src/index.ts',
   plugins: [
     typescript({
-      declarationDir: 'dist'
+      declaration: false,
     }),
     commonjs(),
     babel({
@@ -39,7 +39,9 @@ const esm = defineConfig({
   },
   plugins: [
     typescript({
-      declarationDir: 'dist/esm'
+      declarationDir: 'dist/esm',
+      declaration: true,
+      emitDeclarationOnly: true
     }),
     babel({
       configFile: 'babel.config.js',
